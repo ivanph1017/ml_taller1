@@ -31,7 +31,7 @@ def load():
     X[X == '?'] = 'NaN'
     imputer = Imputer()
     X = imputer.fit_transform(X)
-    print X
+    print(X)
     y = data[:, -1].astype(int)
     logisticR(X,y)
 
@@ -45,7 +45,7 @@ def logisticR(X,y):
     lg=linear_model.LogisticRegression(n_jobs = 10)
     lg.fit(X_train,y_train)
     predictions = lg.predict(X_test)
-    print predictions
+    print(predictions)
     cm=confusion_matrix(y_test, predictions)
     print(cm)
     score = lg.score(X_test, y_test)
